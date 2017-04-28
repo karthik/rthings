@@ -3,7 +3,7 @@
 rthings
 =======
 
-This package is a thin wrapper around `list.design`. The website says: *Lists a gallery of real data ready to be placed in your design. Kind of like an App Store for fake content. Want to design with real data ? There's a list for that.*
+This package is a thin wrapper around [`list.design`](http://lists.design/). The website says: *Lists a gallery of real data ready to be placed in your design.* So if you need a random list of things to populate an example or a demo, here goes. 📋
 
 ``` r
 library(rthings)
@@ -42,17 +42,12 @@ library(rthings)
 #> [63] "Usernames"                "Video Games"             
 #> [65] "Videos"                   "Weather"                 
 #> [67] "Websites"                 "Words"
-# and if you want to get a list of random Companies, then:
+```
 
-library(magrittr)  
-#> 
-#> Attaching package: 'magrittr'
-#> The following object is masked from 'package:purrr':
-#> 
-#>     set_names
-#> The following object is masked from 'package:tidyr':
-#> 
-#>     extract
+and if you want to get a list of say random Companies, then:
+
+``` r
+library(tidyverse)  
 x %>% .[which(x == "Companies")] %>% get_list()
 #> [[1]]
 #>                              data
@@ -156,3 +151,5 @@ x %>% .[which(x == "Companies")] %>% get_list()
 #> 98               Volkswagen Group
 #> 99         Verizon Communications
 ```
+
+That's it!
