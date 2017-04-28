@@ -1,14 +1,22 @@
 Package: rthings
-Title: What the Package Does (one line, title case)
+Title: Retrieves Data From 'list.design'
 Version: 0.0.0.9000
 Authors@R: 'Karthik Ram <karthik.ram@gmail.com> [aut, cre]'
-Description: What the package does (one paragraph).
+Description: 'list.design' (http://lists.design/) is gallery of real data ready to be placed in other contexts.
 Depends: R (>= 3.3.3)
 License: MIT + file LICENSE
+Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
 LazyData: true
+Imports:
+        rvest,
+        httr,
+        xml2,
+        jsonlite,
+        magrittr
 Suggests: covr,
     testthat,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+RoxygenNote: 6.0.1

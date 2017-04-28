@@ -11,3 +11,18 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 ```
+
+# rthings
+
+This package is a thin wrapper around `list.design`. The website says: _Lists a gallery of real data ready to be placed in your design. Kind of like an App Store for fake content. Want to design with real data ? There's a list for that._
+
+```{r}
+library(rthings)
+(x <- stuff())
+# and if you want to get a list of random Companies, then:
+
+library(magrittr)  
+x %>% .[which(x == "Companies")] %>% get_list()
+```
+
+
