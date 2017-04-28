@@ -1,7 +1,8 @@
 Package: rthings
 Title: Retrieves Data From 'list.design'
 Version: 0.0.0.9000
-Authors@R: 'Karthik Ram <karthik.ram@gmail.com> [aut, cre]'
+Authors@R: person("Karthik", "Ram", email = "karthik.ram@gmail.com",
+                  role = c("aut", "cre"))
 Description: 'list.design' (http://lists.design/) is gallery of real data ready to be placed in other contexts.
 Depends: R (>= 3.3.3)
 License: MIT + file LICENSE

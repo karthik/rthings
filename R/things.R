@@ -34,7 +34,7 @@ get_list <- function(stuff, json = FALSE) {
   if(!is.null(d))  ifelse(json, d, jsonlite::fromJSON(d))
 }
 
-
+#' @noRD
 readUrl <- function(url) {
   out <- tryCatch({
     readLines(con = url, warn = FALSE)
