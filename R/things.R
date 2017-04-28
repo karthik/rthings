@@ -30,7 +30,26 @@ stuff <- function() {
 #' stuff() %>% .[[1]] %>% get_list()
 get_list <- function(stuff, json = FALSE) {
   clean_stuff <- tolower(gsub(" |\\(|\\)", "",stuff))
-  d <- readLines(paste0("http://lists.design/download.php?list=", clean_stuff))
-  ifelse(json, d, jsonlite::fromJSON(d))
+  d <- readUrl(paste0("http://lists.design/download.php?list=", clean_stuff))
+  if(!is.null(d))  ifelse(json, d, jsonlite::fromJSON(d))
 }
 
+
+readUrl <- function(url) {
+  out <- tryCatch({
+    readLines(con = url, warn = FALSE)
+  },
+  error = function(cond) {
+    message(paste("URL does not seem to exist:", url))
+    return(NULL)
+  },
+  warning = function(cond) {
+    message(paste("URL caused a warning:", url))
+    # message(cond)
+    return(NULL)
+  },
+  finally = {
+   # message(paste("Processed URL:", url))
+  })
+  return(out)
+}
